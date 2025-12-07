@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerox Support - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=https://discord.gg/B6dZEyAxnD">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        .redirect-container {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .redirect-container h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .redirect-container p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .redirect-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <h1>🎵 Redirecting to Discord Support</h1>
+        <p>You're being redirected to our Discord support server...</p>
+        <div class="spinner"></div>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">
+            If you're not redirected automatically, 
+            <a href="https://discord.gg/B6dZEyAxnD" class="redirect-link">click here</a>
+        </p>
+    </div>
+    <script>
+        // Fallback redirect after 1 second
+        setTimeout(() => {
+            window.location.href = 'https://discord.gg/B6dZEyAxnD';
+        }, 1000);
+    </script>
+</body>
+</html>
