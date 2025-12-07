@@ -1,0 +1,33 @@
+name: Deploy to FTP Server
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to nerox.novacloud.tech
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /
+          local-dir: ./
+
+# To use this workflow:
+# 1. Go to repository Settings > Secrets and variables > Actions
+# 2. Add the following secrets:
+#    - FTP_SERVER: Your FTP server address (e.g., ftp.novacloud.tech)
+#    - FTP_USERNAME: Your FTP username
+#    - FTP_PASSWORD: Your FTP password
+# 3. Adjust server-dir if needed (e.g., /public_html/ or /www/)
