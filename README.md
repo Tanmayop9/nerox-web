@@ -1,6 +1,6 @@
 # Nerox - Discord Music Bot Website
 
-![Nerox Banner](https://cdn.discordapp.com/avatars/1346834405074796545/a_28c9247a1eb91089102ceb054f4c09f2.gif?size=128)
+![Nerox Banner](images/nerox-avatar.gif)
 
 A modern, responsive website for the Nerox Discord music bot. Built with pure HTML, CSS, and JavaScript - no frameworks required!
 
