@@ -1092,3 +1092,40 @@ body {
         height: 120px;
     }
 }
+
+/* ===== Accessibility - Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .feature-card:hover,
+    .command-card:hover,
+    .team-card:hover,
+    .tab-btn:hover {
+        transform: none;
+    }
+
+    .gradient-text {
+        animation: none;
+        background-position: 0% 50%;
+    }
+
+    .hero-bg {
+        animation: none;
+    }
+
+    .floating-card {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .status-dot {
+        animation: pulse 2s ease-in-out infinite;
+    }
+}
