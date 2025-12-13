@@ -786,6 +786,20 @@ body {
     font-size: 15px;
 }
 
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    text-align: left;
+}
+
+.feature-list li {
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 6px 0;
+    line-height: 1.6;
+}
+
 /* ===== Commands Section ===== */
 .commands {
     padding: 120px 0;
@@ -1583,6 +1597,7 @@ body {
         opacity: 0;
         transition: all 0.3s ease;
         pointer-events: none;
+        z-index: 999;
     }
 
     .nav-menu.active {
@@ -1634,6 +1649,25 @@ body {
         transform: translateX(-50%);
     }
 
+    /* Getting Started Section Mobile */
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 12px 0;
+    }
+
+    .step-card {
+        max-width: 100%;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Features Grid Mobile */
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -1646,6 +1680,7 @@ body {
         font-size: 16px;
     }
 
+    /* Commands Section Mobile */
     .commands-tabs {
         gap: 12px;
     }
@@ -1659,11 +1694,48 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .command-usage {
+        font-size: 12px;
+    }
+
+    .command-usage code {
+        font-size: 11px;
+        word-break: break-word;
+    }
+
+    /* FAQ Section Mobile */
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-question h3 {
+        font-size: 16px;
+    }
+
+    /* Statistics Section Mobile */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+
+    /* Team Section Mobile */
     .team-grid {
         grid-template-columns: 1fr;
         gap: 32px;
     }
 
+    .team-card {
+        padding: 36px 24px;
+    }
+
+    .team-stats {
+        gap: 24px;
+    }
+
+    /* Footer Mobile */
     .footer-content {
         flex-direction: column;
         gap: 24px;
