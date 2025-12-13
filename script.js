@@ -309,6 +309,60 @@ const imageObserver = new IntersectionObserver((entries) => {
 
 images.forEach(img => imageObserver.observe(img));
 
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        // Close other items
+        const wasActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        
+        // Toggle current item
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+// Animate statistics numbers
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const element = entry.target;
+            const target = element.getAttribute('data-target');
+            
+            if (target) {
+                const targetNum = parseInt(target);
+                const duration = 2000;
+                const increment = targetNum / (duration / 16);
+                let current = 0;
+                
+                const updateNumber = () => {
+                    current += increment;
+                    if (current < targetNum) {
+                        element.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = targetNum.toLocaleString() + '+';
+                    }
+                };
+                
+                updateNumber();
+            }
+            
+            statsObserver.unobserve(element);
+        }
+    });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(num => {
+    if (num.getAttribute('data-target')) {
+        statsObserver.observe(num);
+    }
+});
+
 // Console easter egg
 console.log('%c👋 Welcome to Nerox!', 'font-size: 24px; font-weight: bold; color: #667eea;');
 console.log('%c🎵 The best Discord music bot', 'font-size: 16px; color: #b9bbbe;');
